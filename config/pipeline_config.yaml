@@ -1,0 +1,93 @@
+# =============================================================================
+# AirFlow Flight Analytics Platform - Pipeline Configuration
+# =============================================================================
+#
+# Central YAML configuration for all ETL pipeline phases.
+# All paths are relative to the project root directory.
+#
+# Modify this file to change input sources, output locations,
+# logging behaviour, or execution parameters.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Project Metadata
+# ---------------------------------------------------------------------------
+project:
+  name: "AirFlow Flight Analytics Platform"
+  version: "1.0.0"
+  environment: "production"
+
+# ---------------------------------------------------------------------------
+# Input Data Sources
+# ---------------------------------------------------------------------------
+inputs:
+  raw_data_dir: "data/raw"
+  airlines_csv: "data/raw/airlines.csv"
+  airports_csv: "data/raw/airports.csv"
+  flights_csv: "data/raw/flights.csv"
+
+# ---------------------------------------------------------------------------
+# Output Paths
+# ---------------------------------------------------------------------------
+outputs:
+  cleaned_data_dir: "data/cleaned"
+  cleaned_csv: "data/cleaned/flights_cleaned.csv"
+  analytics_data_dir: "data/analytics"
+
+# ---------------------------------------------------------------------------
+# Database
+# ---------------------------------------------------------------------------
+database:
+  directory: "database"
+  path: "database/airflow.db"
+
+# ---------------------------------------------------------------------------
+# Reports
+# ---------------------------------------------------------------------------
+reports:
+  directory: "reports"
+  data_quality_report: "reports/data_quality_report.txt"
+  analytics_summary: "reports/analytics_summary.txt"
+  dashboard_report: "reports/dashboard_report.txt"
+  pipeline_run_report: "reports/pipeline_run_report.txt"
+
+# ---------------------------------------------------------------------------
+# Visualizations
+# ---------------------------------------------------------------------------
+visualizations:
+  charts_dir: "visualizations/charts"
+  dashboards_dir: "visualizations/dashboards"
+  exports_html_dir: "exports/html"
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging:
+  level: "INFO"
+  log_dir: "logs"
+  log_file: "logs/pipeline.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  max_bytes: 10485760       # 10 MB
+  backup_count: 5
+
+# ---------------------------------------------------------------------------
+# Pipeline Execution Settings
+# ---------------------------------------------------------------------------
+execution:
+  flights_sample_size: 100000
+  stop_on_failure: true
+  generate_reports: true
+  phases:
+    - extract
+    - transform
+    - load
+    - analytics
+    - dashboard
+
+# ---------------------------------------------------------------------------
+# Metadata
+# ---------------------------------------------------------------------------
+metadata:
+  directory: "metadata"
+  pipeline_metadata_file: "metadata/pipeline_metadata.json"

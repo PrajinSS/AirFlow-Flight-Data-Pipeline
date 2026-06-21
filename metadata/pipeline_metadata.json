@@ -1,0 +1,50 @@
+{
+  "pipeline_name": "AirFlow Flight Analytics Platform",
+  "pipeline_version": "1.0.0",
+  "run_id": "20260619_144946",
+  "run_timestamp": "2026-06-19T14:49:46.612132",
+  "total_duration_seconds": 27.677,
+  "overall_status": "SUCCESS",
+  "phases": [
+    {
+      "phase_name": "extract",
+      "status": "SUCCESS",
+      "start_time": "2026-06-19T14:49:46.635258",
+      "end_time": "2026-06-19T14:49:49.378766",
+      "duration_seconds": 2.743,
+      "error_message": null
+    },
+    {
+      "phase_name": "transform",
+      "status": "SUCCESS",
+      "start_time": "2026-06-19T14:49:49.380015",
+      "end_time": "2026-06-19T14:49:54.021397",
+      "duration_seconds": 4.642,
+      "error_message": null
+    },
+    {
+      "phase_name": "load",
+      "status": "SUCCESS",
+      "start_time": "2026-06-19T14:49:54.024054",
+      "end_time": "2026-06-19T14:50:06.138708",
+      "duration_seconds": 12.115,
+      "error_message": null
+    },
+    {
+      "phase_name": "analytics",
+      "status": "SUCCESS",
+      "start_time": "2026-06-19T14:50:06.139780",
+      "end_time": "2026-06-19T14:50:06.808254",
+      "duration_seconds": 0.668,
+      "error_message": null
+    },
+    {
+      "phase_name": "dashboard",
+      "status": "SUCCESS",
+      "start_time": "2026-06-19T14:50:06.808783",
+      "end_time": "2026-06-19T14:50:14.289110",
+      "duration_seconds": 7.481,
+      "error_message": null
+    }
+  ]
+}

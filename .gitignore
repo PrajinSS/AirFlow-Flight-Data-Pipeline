@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+
+# Databases
+database/
+warehouse/
+
+# Generated datasets
+data/analytics/
+data/bi/
+data/trends/
+data/cleaned/
+
+# Large raw dataset
+data/raw/flights.csv
+
+# Reports & logs
+reports/
+logs/
+
+# Generated dashboards
+exports/html/
+
+# Generated charts
+visualizations/
+
+# Virtual environments
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
